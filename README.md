@@ -1,51 +1,54 @@
-# AudioQ-Streamlit
-A model-as-a-service project 
+## CONVOFLOW-AI
 
+CONVOFLOW-AI is a model-as-a-service project that provides a user-friendly platform for uploading audio files, processing their content, and asking questions based on summarized text. Leveraging advanced machine learning APIs, this Streamlit application allows users to interact with audio content effortlessly, whether by generating relevant questions or providing their own.
 
-Streamlit Link - https://bigdataia-spring2023-team-01-model-as-a-se-streamlitmain-mxcf4d.streamlit.app/
+![Architecture Diagram](workflow.png)
 
-Airflow Link - http://35.237.121.118:8080/home
+## Technology Stack
+- Streamlit: For building an interactive front-end.
+- Airflow: Used for orchestration and managing ad-hoc and batch processing workflows.
+- ChatGPT API: Provides intelligent responses to user questions about the audio content.
+- Whisper API: Used for converting audio to text with high accuracy.
 
-Documentation Link - https://codelabs-preview.appspot.com/?file_id=19xyGJumh98_N7z0qhKBeTg10asxw79QeTDVa_zSGbFs/edit#0
+## Project Description
+CONVOFLOW-AI is designed to streamline interaction with audio files through:
 
-The objective of this project is to develop a user-friendly and interactive Streamlit application that allows users to upload audio of their choice and ask questions related to the content of the audio. The application will utilize advanced audio processing techniques to extract meaningful information from the audio, which will be used to generate relevant questions for the user to select from or to provide a platform for users to input their own custom questions.
-Users will have the flexibility to choose from various audio and upload them to the application with ease. Once the audio is uploaded, the application will automatically process it to extract relevant information and provide with some generic questions.
-The application will provide an intuitive user interface, allowing users to easily navigate and ask questions related to the audio content. Additionally, the application will have the functionality to store previous audios, making it easy for users to retrieve and access them at a later time.
-Overall, this Streamlit application will offer a unique and efficient platform for users to explore audio content and ask questions that are relevant and meaningful to them.
+- Audio Processing: Converts audio files into text summaries.
+- Question Generation: Provides generic questions based on the audio content.
+- Custom Querying: Users can also submit their own questions to gain insights from the summarized text.
+- Audio History: Stores uploaded audios for later retrieval, enabling users to revisit and explore previously processed content.
 
-# Steps to run the code
-1. Open terminal
-2. Browse the location where you want to clone the repository
-3. Write the following command and press enter 
-````
-  git clone https://github.com/BigDataIA-Spring2023-Team-01/Model-as-a-service.git
- ````
- 4. Create a virtual environment using the following command
- ````
-  python -m venv <Virtual_environment_name>
- ````
- 5. Activate the virtual environment and download the requirements.txt using
- ````
-  pip install -r /path/to/requirements.txt
- ````
- 6. Run the Streamlit application.(cd to the root of the project /Model-as-a-service)
- ````
-  streamlit run streamlit/main.py
- ````
-# Reference 
-./airflow
+## The backend leverages:
 
-This folder cotains the adhocg dag and bacth dag files 
+- ChatGPT API: For generating natural language responses to user questions.
+- Whisper API: For high-accuracy audio-to-text conversion.
+- Airflow: For orchestrating ad-hoc and batch audio processing workflows, ensuring scalability and efficiency.
+This application offers an intuitive experience, for navigating audio content, asking questions, and accessing saved audio files.
 
-./data 
+## Features
+- Audio Upload: Easily upload or record audio files directly in the app.
+- Text Summarization: Automatic transcription and summarization of audio files using Whisper API.
+- Question Answering: Ask questions about the audio content with ChatGPT-generated responses.
+- Storage & Retrieval: Save audio files to access and interact with them later.
 
-This folder contains the audio recordings and the images used in the project
+## Steps to Run the Code
+1. Clone the Repository:
+git clone https://github.com/BigDataIA-Spring2023-Team-01/Model-as-a-service.git
 
-./openapi
+2. Create a Virtual Environment:
+bash
+python -m venv <Virtual_environment_name>
 
-This folder contains the files integrating the whisper API with airflow dags
+3. Activate Virtual Environment and Install Requirements:
+bash
+pip install -r /path/to/requirements.txt
 
-./streamlit 
+4. Run the Streamlit Application: Navigate to the project root:
+bash
+cd CONVOFLOW-AI
 
-This folder contains the streamlit application files
+5. Then start the application:
+bash
+streamlit run streamlit/main.py
+
 
